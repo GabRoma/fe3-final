@@ -1,22 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { GlobalContext } from "../Context/GlobalContext";
 
-
-const Card = ({ name, username, id }) => {
-
-  const addFav = ()=>{
-    // Aqui iria la logica para agregar la Card en el localStorage
-  }
+const Navbar = () => {
+  const { state, dispatch } = useContext(GlobalContext);
 
   return (
-    <div className="card">
-        {/* En cada card deberan mostrar en name - username y el id */}
-
-        {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
-
-        {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFav} className="favButton">Add fav</button>
-    </div>
+    <nav className={state.theme}>
+      <Link to="/">Home</Link>
+      <Link to="/favs">Favorites</Link>
+      <Link to="/contact">Contact</Link>
+      <button onClick={() => dispatch({ type: "TOGGLE_THEME" })}>
+        Change Theme
+      </button>
+    </nav>
   );
 };
 
-export default Card;
+export default Navbar;
