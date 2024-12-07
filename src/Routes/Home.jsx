@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { GlobalContext } from "../Context/GlobalContext";
+import { GlobalContext } from "../Components/utils/global.context";
 import Card from "../Components/Card";
 
 const Home = () => {
@@ -12,11 +12,13 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <div className={`home ${state.theme}`}>
-      <h1>Home</h1>
-      <div className="card-grid">
-        {state.dentists.map((dentist) => (
-          <Card key={dentist.id} dentist={dentist} />
+    <div className={`container mt-4 ${state.theme}`}>
+      <h1 className="text-center mb-4">Our Dentists</h1>
+      <div className="row row-cols-md-5 row-cols-1">
+        {state.dentists.map((dentist, index) => (
+          <div className="col mb-5" key={index}>
+            <Card dentist={dentist} />
+          </div>
         ))}
       </div>
     </div>

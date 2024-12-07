@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { GlobalContext } from "../Context/GlobalContext";
+import { GlobalContext } from "../Components/utils/global.context";
 import Card from "../Components/Card";
 
 const Favs = () => {
@@ -7,7 +7,14 @@ const Favs = () => {
 
   return (
     <div className={`favs ${state.theme}`}>
-      <h1>Favorite Dentists</h1>
+      <div className="favs-header">
+        <h1>Favorite Dentists</h1>
+        {state.favs.length > 0 && (
+          <button className="btn btn-danger" onClick={() => dispatch({ type: "CLEAR_FAVS" })}>
+            Clear Favorites
+          </button>
+        )}
+      </div>
       <div className="card-grid">
         {state.favs.length > 0 ? (
           state.favs.map((fav) => <Card key={fav.id} dentist={fav} />)
@@ -15,13 +22,6 @@ const Favs = () => {
           <p>No favorite dentists added yet.</p>
         )}
       </div>
-      {state.favs.length > 0 && (
-        <div className="actions">
-          <button onClick={() => dispatch({ type: "CLEAR_FAVS" })}>
-            Clear Favorites
-          </button>
-        </div>
-      )}
     </div>
   );
 };

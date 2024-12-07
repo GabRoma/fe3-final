@@ -11,57 +11,66 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.favButton{
-  background-color: rgba(136, 136, 136, 0.116);
-  padding: 10px;
+
+.favButton {
+  background-color: rgba(58, 58, 58, 0);
+  margin-bottom: 1rem;
   border: none;
-  width: 100%;
   cursor: pointer;
+  font-size: 1.5rem;
 }
 
-h1{
+h1 {
   text-align: center;
 }
 
-nav{
+.navlinks {
   display: flex;
-  width: 80vw;
-  justify-content: flex-start;
-  padding: 1rem;
-}
-
-a{
+  justify-content: space-between;
   color: #000;
   text-decoration: none;
   margin: 5px;
   cursor: pointer;
 }
-a:hover{
+
+.navlinks > * {
+  margin: 0 3rem;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  margin: 5px;
+  cursor: pointer;
+}
+a:hover {
   color: rgb(136, 136, 136);
-} 
+}
 
 footer {
   display: flex;
   justify-content: center;
   text-align: center;
   padding: 2rem;
-  position: relative;
+  position: fixed;
   bottom: 0;
-  width: 90%;
+  width: 100vw;
   height: 40px;
   margin-top: 2rem;
 }
 
-footer > img{
+footer > img {
   width: 200px;
+  height: auto;
   margin: 0;
 }
-footer > p{
+
+footer > p {
   margin: 0;
   padding-top: 0.7rem;
 }
 
-form{
+form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -70,37 +79,60 @@ form{
   margin: 0 auto;
 }
 
-.card{
+.card {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
-  width: 200px;
+  width: 250px;
   padding: 0.5rem 0.5rem 0 0.5rem;
   border: 0.5px solid rgb(136, 136, 136);
 }
 
-.card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
+.card:hover {
+  border: 0.5px solid rgb(124, 24, 24);
 }
 
-.card-grid{
+.card a:hover {
+  color: rgb(124, 24, 24);
+}
+
+.card-grid {
   display: flex;
   justify-content: space-evenly;
   gap: 1rem;
-  width: 90vw;
+  width: 80vw;
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
 }
 
-table {
- border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    display: table;
-    border: 1px solid #ccc;
+.card-light {
+  background-color: white;
+  color: black;
+}
 
+.card-dark {
+  background-color: grey;
+  color: white;
+}
+
+.btn-outline-secondary {
+  color: black;
+  border-color: black;
+}
+
+body.dark-theme .btn-outline-secondary {
+  color: white;
+  border-color: white;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  display: table;
+  border: 1px solid #ccc;
 }
 
 td, th {
@@ -113,10 +145,96 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.dark{
-  background-color: #12121296;
+body.light-theme {
+  background-color: white;
+  color: black;
+}
+
+body.dark-theme {
+  background-color: #121212e1;
   color: white;
 }
-.dark > a {
+
+.favs {
+  padding: 3rem;
+}
+
+.favs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.img-fluid {
+  max-width: 300px;
+  height: auto;
+}
+
+.modal-light {
+  background-color: white;
+  color: black;
+}
+
+.modal-dark {
+  background-color: #333;
   color: white;
+}
+
+.modal-body {
+  height: 60vh;
+  padding: 20px;
+}
+
+.modal-header .modal-title {
+  font-size: 1.5rem;
+}
+
+.modal-header .btn-close {
+  padding: 0.5rem;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  margin-bottom: 1rem;
+}
+
+.form-control-light {
+  background-color: white;
+  color: black;
+  border: 1px solid #ced4da;
+}
+
+.form-control-dark {
+  background-color: #555;
+  color: white;
+  border: 1px solid #444;
+}
+
+.alert {
+  margin-top: 1rem;
+}
+
+.contact {
+  padding: 4rem;
+}
+
+.contact h2 {
+  margin-bottom: 1rem;
+}
+
+.contact p {
+  margin-bottom: 3rem;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-control {
+  width: 100%;
 }
